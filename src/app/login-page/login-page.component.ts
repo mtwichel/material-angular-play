@@ -31,11 +31,8 @@ export class LoginPageComponent implements OnInit {
     this.authService.logout();
   }
 
-  resetPassword() {
-  this.dialog.open(ForgotPasswordDialogComponent, {
-      width: '250px',
-      data: {email: this.username }
-    });
+  forgotPassword() {
+    this.authService.forgotPassword(this.username);
   }
 
   ngOnInit() {

@@ -5,12 +5,17 @@ import * as firebase from 'firebase/app';
 
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ForgotPasswordDialogComponent } from './forgot-password-dialog/forgot-password-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
 
-  constructor(private firebaseAuth: AngularFireAuth, public snackBar: MatSnackBar) {
+  constructor(
+    private firebaseAuth: AngularFireAuth,
+    public snackBar: MatSnackBar,
+    public dialog: MatDialog) {
     this.user = firebaseAuth.authState;
   }
 
@@ -27,7 +32,9 @@ export class AuthService {
           this.snackBar.open(
             `That email is already in use.`,
             'Forgot Password',
-          );
+          ).onAction().subscribe(() => {
+            this.forgotPassword(email);
+          });
         }
       });
   }
@@ -62,4 +69,17 @@ export class AuthService {
       console.log('Something went wrong:', err.message);
     });
   }
+
+  forgotPassword(email: string) {
+    this.dialog.open(ForgotPasswordDialogComponent, {
+      width: '250px',
+      data: { email: email }
+    }).afterClosed().subscribe(result => {
+      console.log(result);
+      if (result) {
+        this.resetPassword(result);
+      }
+    });
+  }
+
 }

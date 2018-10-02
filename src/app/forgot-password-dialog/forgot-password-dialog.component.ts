@@ -14,16 +14,14 @@ export class ForgotPasswordDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<ForgotPasswordDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ForgotPasswordData,
-    private auth: AuthService) {}
+    @Inject(MAT_DIALOG_DATA) public data: ForgotPasswordData) {}
 
   cancel(): void {
     this.dialogRef.close();
   }
 
   resetPassword() {
-    this.auth.resetPassword(this.data.email);
-    this.dialogRef.close();
+    this.dialogRef.close(this.data.email);
   }
 
 }
