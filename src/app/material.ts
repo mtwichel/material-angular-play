@@ -11,6 +11,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 
 
@@ -31,6 +33,7 @@ import { NgModule } from '@angular/core';
         MatNativeDateModule,
         MatProgressSpinnerModule,
         MatDialogModule,
+        MatRadioModule,
     ],
     exports: [
         MatButtonModule,
@@ -46,6 +49,7 @@ import { NgModule } from '@angular/core';
         MatNativeDateModule,
         MatProgressSpinnerModule,
         MatDialogModule,
+        MatRadioModule,
     ],
 })
 export class MaterialModule { }

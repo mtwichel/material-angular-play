@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ForgotPasswordDialogComponent } from '../forgot-password-dialog/forgot-password-dialog.component';
 import { MatDialog } from '@angular/material/dialog';

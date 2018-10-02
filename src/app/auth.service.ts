@@ -5,7 +5,7 @@ import * as firebase from 'firebase/app';
 
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ForgotPasswordDialogComponent } from './forgot-password-dialog/forgot-password-dialog.component';
+import { ForgotPasswordDialogComponent } from './components/auth-components/forgot-password-dialog/forgot-password-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Injectable()
@@ -25,6 +25,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Success!', value);
+        // TODO redirect to main screen
       })
       .catch(err => {
         console.log('Something went wrong:', err);

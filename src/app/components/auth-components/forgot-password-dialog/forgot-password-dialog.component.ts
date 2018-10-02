@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../../auth.service';
 
 export interface ForgotPasswordData {
   email: string;

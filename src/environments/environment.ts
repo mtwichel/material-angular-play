@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDI1cDIlqirIoILNJ13GnV6jqm-muXzTww',
-    authDomain: 'debatewebapp.firebaseapp.com',
-    databaseURL: 'https://debatewebapp.firebaseio.com',
-    projectId: 'debatewebapp',
-    storageBucket: 'debatewebapp.appspot.com',
-    messagingSenderId: '895377149177'
+    apiKey: 'AIzaSyAZ0P5M-Gbn0RxrXeMSQhgmsczF59dnQ2E',
+    authDomain: 'sermonquizapp.firebaseapp.com',
+    databaseURL: 'https://sermonquizapp.firebaseio.com',
+    projectId: 'sermonquizapp',
+    storageBucket: 'sermonquizapp.appspot.com',
+    messagingSenderId: '1054742774432'
   },
 };
 
